@@ -1,0 +1,155 @@
+@import url("https://fonts.cdnfonts.com/css/nunito-sans");
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.display-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.back-ground-blue {
+  background-color: var(--bg_body);
+}
+body {
+  font-family: "Nunito Sans";
+  font-size: 20px;
+  background-color: var(--bg_default);
+  margin: 0;
+  flex-direction: column;
+  height: 100vh;
+}
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  background-color: var(--bg_default);
+}
+.header .title {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+.firstTriangle {
+}
+.secondTriangle {
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.welcome .firstWelcome {
+  color: var(--brand-secondary);
+  font-size: 25px;
+  font-weight: 700;
+}
+.welcome .secondWelcome {
+  font-size: 20px;
+  margin-left: 250px;
+  margin-bottom: 40px;
+}
+.buttons {
+  gap: 5px;
+}
+.iconButton {
+  font-size: 20px;
+  background-color: var(--bg_default);
+  display: flex;
+  padding: 8px;
+  gap: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--lines-color);
+}
+.main {
+  background-color: var(--bg_body);
+  flex-direction: column;
+  padding: 40px 80px;
+  flex-grow: 1;
+}
+.searchBar {
+  background-color: var(--bg_default);
+  border-radius: 10px;
+  padding-left: 10px;
+  justify-content: space-between;
+}
+.seacrhIcon {
+  gap: 20px;
+}
+.search {
+  font-size: 20px;
+  border: none;
+}
+select {
+  font-size: 20px;
+  background-color: var(--bg_default);
+  border: none;
+  width: 250px;
+}
+.secondFilter {
+  margin-left: 0px;
+}
+.boxFilterFirst,
+.boxFilterSecond {
+  flex-direction: column;
+  border-left: 2px solid var(--lines-color);
+  gap: 5px;
+  padding: 10px;
+}
+#labelSort {
+  margin-left: -173px;
+}
+#labelFilter {
+  margin-left: -165px;
+}
+main > p {
+  font-weight: 700;
+  font-size: 30px;
+}
+.items {
+  margin-left: -35px;
+}
+.item {
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 15px;
+  background-color: var(--bg_default);
+  margin-right: 20px;
+}
+img {
+  width: 500px;
+  height: 300px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.itemType {
+  font-weight: 700;
+  display: block;
+}
+.checked {
+  color: orange;
+}
+figcaption,
+.author,
+.starRating {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.starRating {
+  margin-top: 30px;
+}
+.author {
+  color: var(--lines-color);
+  font-weight: 400;
+}
+.footer {
+  padding: 20px 100px;
+  text-align: center;
+  background-color: var(--bg_body);
+  font-size: 25px;
+}
+footer span {
+  color: var(--heart-color);
+}
+.gap {
+  gap: 10px;
+}

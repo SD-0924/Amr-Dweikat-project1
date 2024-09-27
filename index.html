@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="variables.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet" />
+    <title>First Project</title>
+  </head>
+  <body class="display-flex">
+    <header class="header display-flex">
+      <p class="title">Web Topics</p>
+      <div class="buttons display-flex align-items-center">
+        <button class="iconButton">
+          <ion-icon name="moon-outline"></ion-icon> Dark Mode
+        </button>
+        <button class="iconButton">
+          <ion-icon name="heart-outline"></ion-icon>
+          Favourites
+        </button>
+      </div>
+    </header>
+    <header class="welcome">
+      <div class="triangles display-flex align-items-center">
+        <span class="firstTriangle"></span>
+        <span class="secondTriangle"></span>
+      </div>
+      <span class="firstWelcome">Welcome to our website!</span>
+      <span class="secondWelcome"
+        >We have a new design that's fresh, modern, and easy to use.</span
+      >
+    </header>
+    <main class="main display-flex">
+      <div class="searchBar display-flex align-items-center">
+        <div class="seacrhIcon display-flex align-items-center">
+          <ion-icon name="search-outline"></ion-icon>
+          <input
+            type="search"
+            placeholder="Search the website..."
+            class="search"
+          />
+        </div>
+        <div class="boxFilters display-flex align-items-center">
+          <div class="boxFilterFirst display-flex align-items-center">
+            <label id="labelSort">Sort by:</label>
+            <select>
+              <option>Default</option>
+            </select>
+          </div>
+          <div class="boxFilterSecond display-flex align-items-center">
+            <label id="labelFilter">Filter by:</label>
+            <select class="secondFilter">
+              <option>Default</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <p>"2" Web Topics Found</p>
+      <div class="items display-flex">
+        <figure class="item display-flex">
+          <img src="./images/html.png" alt="HTML image" />
+          <figcaption>
+            Web Devlopment Languages<span class="itemType">HTML</span>
+          </figcaption>
+          <div class="starRating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <p class="author">Author: Sarah Smith</p>
+        </figure>
+        <figure class="item display-flex">
+          <img src="./images/javascript.jpg" alt="Javascript image" />
+          <figcaption>
+            Web Devlopment Languages<span class="itemType">JavaScript</span>
+          </figcaption>
+          <div class="starRating">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <p class="author">Author: David Lee</p>
+        </figure>
+      </div>
+    </main>
+    <footer class="footer">
+      Developed with <span>&#10084;</span> &copy; 2023
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
