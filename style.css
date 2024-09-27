@@ -1,29 +1,25 @@
 @import url("https://fonts.cdnfonts.com/css/nunito-sans");
-.justify-content-space-between {
-  justify-content: space-between;
-}
 .display-flex {
   display: flex;
 }
 .align-items-center {
   align-items: center;
 }
-.back-ground-blue {
-  background-color: var(--bg_body);
+.flex-direction-column {
+  flex-direction: column;
+}
+.back-ground-white {
+  background-color: var(--bg_default);
 }
 body {
   font-family: "Nunito Sans";
   font-size: 20px;
-  background-color: var(--bg_default);
   margin: 0;
-  flex-direction: column;
   height: 100vh;
 }
 .header {
   justify-content: space-between;
-  align-items: center;
   padding: 10px 100px;
-  background-color: var(--bg_default);
 }
 .header .title {
   color: var(--brand-primary);
@@ -34,8 +30,6 @@ body {
 .secondTriangle {
 }
 .welcome {
-  display: flex;
-  flex-direction: column;
   text-align: center;
 }
 .welcome .firstWelcome {
@@ -53,8 +47,6 @@ body {
 }
 .iconButton {
   font-size: 20px;
-  background-color: var(--bg_default);
-  display: flex;
   padding: 8px;
   gap: 5px;
   border-radius: 5px;
@@ -62,12 +54,10 @@ body {
 }
 .main {
   background-color: var(--bg_body);
-  flex-direction: column;
   padding: 40px 80px;
   flex-grow: 1;
 }
 .searchBar {
-  background-color: var(--bg_default);
   border-radius: 10px;
   padding-left: 10px;
   justify-content: space-between;
@@ -81,7 +71,6 @@ body {
 }
 select {
   font-size: 20px;
-  background-color: var(--bg_default);
   border: none;
   width: 250px;
 }
@@ -90,7 +79,6 @@ select {
 }
 .boxFilterFirst,
 .boxFilterSecond {
-  flex-direction: column;
   border-left: 2px solid var(--lines-color);
   gap: 5px;
   padding: 10px;
@@ -109,10 +97,8 @@ main > p {
   margin-left: -35px;
 }
 .item {
-  flex-direction: column;
   gap: 8px;
   border-radius: 15px;
-  background-color: var(--bg_default);
   margin-right: 20px;
 }
 img {
@@ -139,7 +125,6 @@ figcaption,
 }
 .author {
   color: var(--lines-color);
-  font-weight: 400;
 }
 .footer {
   padding: 20px 100px;
@@ -149,7 +134,4 @@ figcaption,
 }
 footer span {
   color: var(--heart-color);
-}
-.gap {
-  gap: 10px;
 }
