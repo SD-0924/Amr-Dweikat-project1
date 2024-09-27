@@ -26,6 +26,9 @@ body {
   font-weight: 700;
 }
 .firstTriangle {
+  width: 30px;
+  height: 30px;
+  background-color: red;
 }
 .secondTriangle {
 }
