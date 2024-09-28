@@ -17,27 +17,36 @@ body {
   margin: 0;
   height: 100vh;
 }
-.header {
+.topHeader {
   justify-content: space-between;
   padding: 10px 100px;
 }
-.header .title {
+.topHeader .title {
   color: var(--brand-primary);
   font-weight: 700;
 }
+.midHeader {
+  justify-content: space-between;
+}
 .firstTriangle {
+  width: 20px;
+  height: 20px;
+  background-color: red;
 }
 .secondTriangle {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
 }
-.welcome {
+.bottomHeader {
   text-align: center;
 }
-.welcome .firstWelcome {
+.bottomHeader .firstWelcome {
   color: var(--brand-secondary);
   font-size: 25px;
   font-weight: 700;
 }
-.welcome .secondWelcome {
+.bottomHeader .secondWelcome {
   font-size: 20px;
   margin-left: 250px;
   margin-bottom: 40px;
