@@ -26,17 +26,22 @@ body {
   font-weight: 700;
 }
 .midHeader {
+  border: 1px solid black;
   justify-content: space-between;
+  max-width: 1988px;
 }
-.firstTriangle {
-  width: 20px;
-  height: 20px;
-  background-color: red;
+.leftTriangle,
+.rightTriangle {
+  width: 0;
+  height: 0;
 }
-.secondTriangle {
-  width: 20px;
-  height: 20px;
-  background-color: blue;
+.leftTriangle {
+  border-left: 1400px solid #555;
+  border-bottom: 90px solid transparent;
+}
+.rightTriangle {
+  border-right: 1300px solid red;
+  border-top: 90px solid transparent;
 }
 .bottomHeader {
   text-align: center;
