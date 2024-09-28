@@ -111,12 +111,15 @@ main > p {
 .items {
   flex-wrap: wrap;
   padding: 0;
-  gap: 30px;
+  gap: 40px;
+  margin-top: 25px;
 }
 .item {
   gap: 20px;
   border-radius: 15px;
   margin: 0;
+  padding: 0;
+  justify-content: space-between;
 }
 img {
   border-top-left-radius: 10px;
@@ -131,10 +134,10 @@ img {
 .checked {
   color: orange;
 }
-figcaption,
-.starRating,
-.author {
+.figcaption {
   margin-left: 25px;
+  justify-content: space-between;
+  gap: 40px;
 }
 .author {
   color: var(--lines-color);
