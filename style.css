@@ -74,9 +74,12 @@ body {
 .seacrhIcon {
   gap: 20px;
 }
-.search {
+#search {
   font-size: 20px;
   border: none;
+}
+#search:focus {
+  outline-style: none;
 }
 select {
   font-size: 20px;
