@@ -26,9 +26,7 @@ body {
   font-weight: 700;
 }
 .midHeader {
-  border: 1px solid black;
   justify-content: space-between;
-  max-width: 1988px;
 }
 .leftTriangle,
 .rightTriangle {
@@ -36,11 +34,11 @@ body {
   height: 0;
 }
 .leftTriangle {
-  border-left: 1400px solid #555;
+  border-left: 1000px solid #555;
   border-bottom: 90px solid transparent;
 }
 .rightTriangle {
-  border-right: 1300px solid red;
+  border-right: 1000px solid red;
   border-top: 90px solid transparent;
 }
 .bottomHeader {
