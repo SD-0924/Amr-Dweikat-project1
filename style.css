@@ -109,18 +109,20 @@ main > p {
   font-size: 30px;
 }
 .items {
-  margin-left: -35px;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 30px;
 }
 .item {
-  gap: 8px;
+  gap: 20px;
   border-radius: 15px;
-  margin-right: 20px;
+  margin: 0;
 }
 img {
-  width: 500px;
-  height: 300px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  width: 444px;
+  height: 300px;
 }
 .itemType {
   font-weight: 700;
@@ -130,13 +132,9 @@ img {
   color: orange;
 }
 figcaption,
-.author,
-.starRating {
+.starRating,
+.author {
   margin-left: 25px;
-  margin-top: 10px;
-}
-.starRating {
-  margin-top: 30px;
 }
 .author {
   color: var(--lines-color);
