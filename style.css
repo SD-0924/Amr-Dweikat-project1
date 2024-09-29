@@ -50,9 +50,8 @@ body {
   font-weight: 700;
 }
 .bottomHeader .secondWelcome {
-  font-size: 20px;
   margin-left: 250px;
-  margin-bottom: 40px;
+  font-size: 20px;
 }
 .buttons {
   gap: 5px;
@@ -68,6 +67,8 @@ body {
   background-color: var(--bg_body);
   padding: 40px 80px;
   flex-grow: 1;
+  max-width: var(--max-width);
+  margin: 30px 0 auto;
 }
 .searchBar {
   border-radius: 10px;
@@ -88,21 +89,16 @@ select {
   font-size: 20px;
   border: none;
   width: 250px;
+  margin-left: -4px;
 }
 .secondFilter {
-  margin-left: 0px;
+  margin-left: -3px;
 }
 .boxFilterFirst,
 .boxFilterSecond {
   border-left: 2px solid var(--lines-color);
   gap: 5px;
   padding: 10px;
-}
-#labelSort {
-  margin-left: -173px;
-}
-#labelFilter {
-  margin-left: -165px;
 }
 main > p {
   font-weight: 700;
@@ -151,3 +147,8 @@ img {
 footer span {
   color: var(--heart-color);
 }
+/*
+flex: grid;
+grid-template-rows: auto 1fr auto;
+justify-slef: center;
+*/
