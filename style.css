@@ -128,7 +128,6 @@ main > p {
   border-radius: 15px;
   margin: 0;
   padding: 0;
-  justify-content: space-between;
 }
 img {
   border-top-left-radius: 10px;
