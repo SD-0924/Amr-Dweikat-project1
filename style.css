@@ -13,11 +13,15 @@ body {
   font-size: 20px;
   margin: 0;
   height: 100vh;
+  width: 100vh;
   background-color: var(--bg_default);
+}
+.header {
+  box-sizing: border-box;
 }
 .topHeader {
   justify-content: space-between;
-  padding: 10px 100px;
+  padding: 10px 5%;
 }
 .topHeader .title {
   color: var(--brand-primary);
@@ -179,4 +183,9 @@ img {
 }
 footer span {
   color: var(--heart-color);
+}
+@media (min-width: 320px) and (max-width: 900px) {
+  button span {
+    display: none;
+  }
 }
