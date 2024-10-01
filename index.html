@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="variables.css" />
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
     <!-- for star rating -->
     <link
       rel="stylesheet"
@@ -14,15 +15,15 @@
     <link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet" />
     <title>First Project</title>
   </head>
-  <body class="back-ground-white display-flex flex-direction-column">
+  <body class="display-flex flex-direction-column">
     <header class="header display-flex flex-direction-column">
-      <div class="topHeader back-ground-white display-flex align-items-center">
+      <div class="topHeader display-flex align-items-center">
         <p class="title">Web Topics</p>
         <div class="buttons display-flex align-items-center">
-          <button class="iconButton back-ground-white display-flex">
+          <button class="iconButton display-flex" onclick="changeMode();">
             <ion-icon name="moon-outline"></ion-icon> Dark Mode
           </button>
-          <button class="iconButton back-ground-white display-flex">
+          <button class="iconButton display-flex">
             <ion-icon name="heart-outline"></ion-icon>
             Favourites
           </button>
@@ -40,9 +41,9 @@
       </div>
     </header>
     <main class="main display-flex flex-direction-column">
-      <div class="searchBar back-ground-white display-flex align-items-center">
+      <div class="searchBar display-flex align-items-center">
         <div class="seacrhIcon display-flex align-items-center">
-          <ion-icon name="search-outline"></ion-icon>
+          <ion-icon name="search-outline" id="icon"></ion-icon>
           <input
             type="search"
             placeholder="Search the website..."
@@ -52,25 +53,23 @@
         <div class="boxFilters display-flex align-items-center">
           <div class="boxFilterFirst display-flex flex-direction-column">
             <label id="labelSort">Sort by:</label>
-            <select class="back-ground-white">
+            <select class="select">
               <option>Default</option>
             </select>
           </div>
           <div class="boxFilterSecond display-flex flex-direction-column">
             <label id="labelFilter">Filter by:</label>
-            <select class="back-ground-white secondFilter">
+            <select class="select secondFilter">
               <option>Default</option>
             </select>
           </div>
         </div>
       </div>
-      <p>"24" Web Topics Found</p>
+      <p class="numberOfItems">"24" Web Topics Found</p>
       <div class="items display-flex">
         <!-- first row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/html.png" alt="HTML image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -89,9 +88,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/css.webp" alt="CSS image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>Web Devlopment Languages<span class="itemType">CSS</span></div>
@@ -108,9 +105,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/javascript.jpg" alt="Javascript image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -129,9 +124,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/jquery.png" alt="jQuery image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -152,9 +145,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/angular.png" alt="Angular image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -176,9 +167,7 @@
         </figure>
         <!-- second row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/react.webp" alt="React image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -199,9 +188,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/vuejs.jpeg" alt="Vue.js image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -222,9 +209,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/nodejs.webp" alt="Node.js image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -245,9 +230,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/expressjs.webp" alt="Express.js image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -268,9 +251,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/ruby.jpeg" alt="Ruby on Rails image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -293,9 +274,7 @@
         </figure>
         <!-- third row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/django.jpeg" alt="Django image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -316,9 +295,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/flask.webp" alt="Flask image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -339,9 +316,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/sql.png" alt="SQL image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>Databases and APIs<span class="itemType">SQL</span></div>
@@ -358,9 +333,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/nosql.png" alt="NoSQL image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>Databases and APIs<span class="itemType">NoSQL</span></div>
@@ -377,9 +350,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/restapi.jpeg" alt="REST APIs image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>Databases and APIs<span class="itemType">REST APIs</span></div>
@@ -397,9 +368,7 @@
         </figure>
         <!-- fourth row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/graphql.png" alt="GraphQL image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>Databases and APIs<span class="itemType">GraphQL</span></div>
@@ -416,9 +385,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/oauth.png" alt="OAuth image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -439,9 +406,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/json.png" alt="JSON image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -462,9 +427,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/ajax.gif" alt="AJAX image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -485,9 +448,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/websockets.png" alt="Websockets image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -509,9 +470,7 @@
         </figure>
         <!-- fifth row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/responsive.gif" alt="Responsive Design image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -532,9 +491,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/accessibility.png" alt="Accessibility image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -555,9 +512,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/ux.jpeg" alt="User Experience image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -578,9 +533,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/ui.png" alt="User Interface image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -601,9 +554,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/design-systems.jpeg" alt="Design Systems image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -625,9 +576,7 @@
         </figure>
         <!-- sixth row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img
             src="./images/performance.png"
             alt="Performance Optimization image"
@@ -651,9 +600,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img
             src="./images/cross-browser.jpeg"
             alt="Cross-Browser Compatibility image"
@@ -677,9 +624,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/seo.jpeg" alt="Search Engine Optimization image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -700,9 +645,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/web-security.jpeg" alt="Web Security image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -723,9 +666,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/testing.jpeg" alt="Testing and Debugging image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -747,9 +688,7 @@
         </figure>
         <!-- seventh row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/ci-cd.jpeg" alt="ci-cd image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -770,9 +709,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/devops.png" alt="DevOps image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -793,9 +730,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/cloud.jpeg" alt="Cloud Computing image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -816,9 +751,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/docker.png" alt="Docker image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -839,9 +772,7 @@
           </figcaption>
         </figure>
         <!-- 5-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/microservices.png" alt="Microservices image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -863,9 +794,7 @@
         </figure>
         <!-- eighth row-->
         <!-- 1-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/pwa.png" alt="PWA image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -886,9 +815,7 @@
           </figcaption>
         </figure>
         <!-- 2-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/wai.jpeg" alt="WAI image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -909,9 +836,7 @@
           </figcaption>
         </figure>
         <!-- 3-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/cms.png" alt="CMS image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
@@ -932,9 +857,7 @@
           </figcaption>
         </figure>
         <!-- 4-->
-        <figure
-          class="item back-ground-white display-flex flex-direction-column"
-        >
+        <figure class="item display-flex flex-direction-column">
           <img src="./images/analytics.png" alt="Web Analytics image" />
           <figcaption class="figcaption display-flex flex-direction-column">
             <div>
