@@ -23,7 +23,7 @@
           <button class="iconButton display-flex" onclick="changeMode();">
             <ion-icon name="moon-outline"></ion-icon><span> Dark Mode</span>
           </button>
-          <button class="iconButton display-flex">
+          <button class="iconButton display-flex" onclick="showTopics();">
             <ion-icon name="heart-outline"></ion-icon>
             <span>Favourites</span>
           </button>
@@ -883,7 +883,10 @@
       <div class="footerText">
         Developed with <span>&#10084;</span> &copy; 2023
       </div>
-      <div class="favoriteTopics display-flex flex-direction-column">
+      <div
+        class="favoriteTopics display-flex flex-direction-column"
+        id="topicList"
+      >
         <p class="favoriteTitle">My Favourite Topics</p>
         <div class="favoriteItems display-flex">
           <figure class="favoriteItem display-flex flex-direction-column">

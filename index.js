@@ -14,3 +14,12 @@ function changeMode() {
   }
   darkMode = !darkMode;
 }
+let showFavouritesTopics = true;
+function showTopics() {
+  if (showFavouritesTopics) {
+    document.getElementById("topicList").style.display = "block";
+  } else {
+    document.getElementById("topicList").style.display = "none";
+  }
+  showFavouritesTopics = !showFavouritesTopics;
+}
