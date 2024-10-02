@@ -238,6 +238,7 @@ a {
   width: 100%;
   padding: 20px 0;
   align-items: center;
+  align-content: center;
   gap: 30px;
 }
 .fPOfTitle,
@@ -256,6 +257,18 @@ a {
 }
 .tPOfTitle {
   color: var(--bg_default);
+}
+.detailsItem {
+  padding: 0;
+  gap: 20px;
+  background-color: var(--bg_default);
+}
+.figcaptionDetails {
+  padding: 0;
+}
+#imageDetail {
+  border-radius: 0px;
+  margin: 3px;
 }
 @media (min-width: 320px) and (max-width: 900px) {
   button span {
