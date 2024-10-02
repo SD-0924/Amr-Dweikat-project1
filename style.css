@@ -174,14 +174,22 @@ img {
   font-weight: 700;
 }
 .footer {
-  padding: 20px 100px;
   text-align: center;
   background-color: var(--bg_body);
   font-size: 25px;
   color: var(--body-text);
+  align-items: center;
+  max-width: 2660px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 20px;
 }
-footer span {
+footer .footerText span {
   color: var(--heart-color);
+}
+.favoriteTopics {
+  background-color: var(--bg_default);
+  gap: 10px;
 }
 @media (min-width: 320px) and (max-width: 900px) {
   button span {
