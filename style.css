@@ -229,6 +229,34 @@ footer .footerText span {
 a {
   text-decoration: none;
 }
+.mainDetails {
+  background-color: var(--bg_body);
+  flex-grow: 1;
+}
+.information {
+  background-color: var(--body-text);
+  width: 100%;
+  padding: 20px 0;
+  align-items: center;
+  gap: 30px;
+}
+.fPOfTitle,
+.sPOfTitle,
+.tPOfTitle {
+  margin: 0;
+  padding: 0;
+}
+.fPOfTitle {
+  color: var(--brand-secondary);
+}
+.sPOfTitle {
+  color: var(--bg_default);
+  font-weight: 700;
+  font-size: 40px;
+}
+.tPOfTitle {
+  color: var(--bg_default);
+}
 @media (min-width: 320px) and (max-width: 900px) {
   button span {
     display: none;
