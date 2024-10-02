@@ -270,6 +270,14 @@ a {
   border-radius: 0px;
   margin: 3px;
 }
+.details {
+  background-color: var(--bg_default);
+  border: 2px solid var(--lines-color);
+  justify-content: center;
+}
+.Item {
+  border-top: 1px solid var(--lines-color);
+}
 @media (min-width: 320px) and (max-width: 900px) {
   button span {
     display: none;
