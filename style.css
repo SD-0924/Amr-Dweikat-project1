@@ -226,6 +226,9 @@ footer .footerText span {
 .favouriteFigcaption {
   margin: 5px 10px;
 }
+a {
+  text-decoration: none;
+}
 @media (min-width: 320px) and (max-width: 900px) {
   button span {
     display: none;
