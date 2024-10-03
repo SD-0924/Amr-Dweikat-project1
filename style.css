@@ -353,8 +353,15 @@ a {
   flex-grow: 1;
   padding-top: 20px;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (min-width: 320px) and (max-width: 700px) {
   button span {
     display: none;
+  }
+  .searchBar {
+    flex-direction: column;
+  }
+  .main {
+    max-width: none;
+    padding-left: 15px;
   }
 }
