@@ -232,14 +232,22 @@ a {
 .mainDetails {
   background-color: var(--bg_body);
   flex-grow: 1;
+  align-items: center;
 }
 .information {
   background-color: var(--body-text);
-  width: 100%;
-  padding: 20px 0;
-  align-items: center;
-  align-content: center;
+  width: max-content;
+  padding: 30px 0;
   gap: 30px;
+  height: max-content;
+  margin-right: 600px;
+}
+.topMain {
+  width: 100%;
+  background-color: var(--body-text);
+  align-items: flex-start;
+  justify-content: center;
+  height: max-content;
 }
 .fPOfTitle,
 .sPOfTitle,
@@ -257,26 +265,88 @@ a {
 }
 .tPOfTitle {
   color: var(--bg_default);
+  width: max-content;
 }
 .detailsItem {
+  position: absolute;
+  top: 230px;
+  left: 1330px;
   padding: 0;
   gap: 20px;
   background-color: var(--bg_default);
+  border: 2px solid var(--lines-color);
+  width: max-content;
+  height: max-content;
 }
 .figcaptionDetails {
   padding: 0;
+  margin-left: 20px;
+}
+.figcaptionDetails div {
+  color: var(--body-text);
+}
+.figcaptionDetails div span {
+  font-weight: 700;
+}
+.figcaptionDetails div a {
+  text-decoration: underline;
+  color: var(--brand-primary);
+}
+.bottom {
+  border: 1px solid var(--lines-color);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 0 15px;
+}
+.bottom .firstP {
+  color: var(--body-text);
+  font-size: 16px;
+}
+.bottom button {
+  background-color: var(--brand-secondary);
+  border: none;
+  color: var(--bg_default);
+  width: 255px;
+  font-size: 20px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.bottom .secondP {
+  text-align: center;
+  color: var(--lines-color);
+  margin: 5px 0;
 }
 #imageDetail {
   border-radius: 0px;
-  margin: 3px;
+  margin: 1px;
+  width: 350px;
+  height: 200px;
 }
 .details {
+  width: 700px;
+  height: max-content;
   background-color: var(--bg_default);
-  border: 2px solid var(--lines-color);
-  justify-content: center;
+  border: 1px solid var(--lines-color);
+  border-radius: 5px;
+  margin-left: -555px;
+  margin-top: 20px;
 }
 .Item {
   border-top: 1px solid var(--lines-color);
+  gap: 20px;
+}
+.Item p {
+  color: var(--body-text);
+}
+.Item ion-icon {
+  color: var(--brand-secondary);
+}
+.ST {
+  color: var(--body-text);
+  font-weight: 700;
 }
 @media (min-width: 320px) and (max-width: 900px) {
   button span {
