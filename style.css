@@ -55,7 +55,7 @@ body {
   z-index: -1;
 }
 .bottomHeader {
-  text-align: center;
+  align-self: center;
   margin-bottom: 20px;
 }
 .bottomHeader .firstWelcome {
@@ -64,7 +64,6 @@ body {
   font-weight: 700;
 }
 .bottomHeader .secondWelcome {
-  margin-left: 250px;
   font-size: 20px;
   color: var(--body-text);
 }
