@@ -30,7 +30,7 @@ body {
   margin-bottom: 50px;
 }
 .leftTriangle {
-  width: 83%;
+  width: 65%;
   height: 80px;
   clip-path: polygon(0% 0%, 0% 100%, 100% 0%);
   background-image: linear-gradient(
@@ -42,7 +42,7 @@ body {
   left: 0;
 }
 .rightTriangle {
-  width: 70%;
+  width: 65%;
   height: 80px;
   background-image: linear-gradient(
     to right,
@@ -352,15 +352,39 @@ a {
   flex-grow: 1;
   padding-top: 20px;
 }
-@media (min-width: 320px) and (max-width: 700px) {
+@media (min-width: 320px) and (max-width: 1000px) {
   button span {
     display: none;
   }
   .searchBar {
     flex-direction: column;
+    align-items: start;
+    border: 1px solid var(--lines-color);
+    padding-left: 0;
+    max-width: max-content;
   }
   .main {
-    max-width: none;
     padding-left: 15px;
+  }
+  .midHeader {
+    margin-bottom: 70px;
+  }
+  .seacrhIcon {
+    padding: 10px;
+  }
+  .boxFilterFirst,
+  .boxFilterSecond {
+    border: none;
+    border-radius: none;
+  }
+  .boxFilterFirst {
+    border-right: 1px solid var(--lines-color);
+  }
+  .boxFilters {
+    border-top: 1px solid var(--lines-color);
+    justify-content: space-between;
+  }
+  body {
+    overflow-x: hidden;
   }
 }
