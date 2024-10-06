@@ -141,7 +141,6 @@ main > p {
   padding: 0;
   gap: 40px;
   margin-top: 25px;
-  justify-content: space-between;
 }
 .item {
   background-color: var(--bg_default);
