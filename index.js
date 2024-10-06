@@ -54,8 +54,51 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     localStorage.setItem("darkMode", true);
   }
+  if (!localStorage.getItem("favoriteTopics")) {
+    localStorage.setItem("favoriteTopics", []);
+  }
 });
 
+function changeDetails() {
+  const courseID = window.location.search.substring(1);
+  fetch("./topics.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      document.getElementById("category").innerHTML =
+        data[Number(courseID) - 1]["category"];
+      document.getElementById("topic").innerHTML =
+        data[Number(courseID) - 1]["topic"];
+      document.getElementById("topic2").innerHTML =
+        data[Number(courseID) - 1]["topic"];
+      for (
+        let i = 1;
+        i <= Math.round(Number(data[Number(courseID) - 1]["rating"]));
+        i++
+      ) {
+        document.getElementById("star" + i).classList.add("checked");
+      }
+      // document.getElementById("description").innerHTML =
+      //   data[Number(courseID) - 1]["description"];
+      document.getElementById("imageDetail").src =
+        "../images/" + data[Number(courseID) - 1]["image"];
+
+      document.getElementById("name").textContent =
+        data[Number(courseID) - 1]["name"];
+
+      for (let index = 1; index <= 6; index++) {
+        document.getElementById("subtopics" + index).innerHTML =
+          data[Number(courseID) - 1]["subtopics"][index - 1];
+      }
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
 /*  
 the next step is :
 1) make dark mode working always => done by using local storage

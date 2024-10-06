@@ -15,7 +15,7 @@
     <link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet" />
     <title>First Project</title>
   </head>
-  <body class="display-flex flex-direction-column">
+  <body class="display-flex flex-direction-column" onload="changeDetails();">
     <header class="header display-flex flex-direction-column">
       <div class="topHeader display-flex align-items-center">
         <p class="title">Web Topics</p>
@@ -45,17 +45,17 @@
       <div class="topMain display-flex">
         <div class="information display-flex flex-direction-column">
           <div class="display-flex flex-direction-column">
-            <p class="fPOfTitle">Web Development Languages</p>
-            <p class="sPOfTitle">HTML</p>
-            <div class="starRating">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
+            <p class="fPOfTitle" id="category">Web Development Languages</p>
+            <p class="sPOfTitle" id="topic">HTML</p>
+            <div>
+              <span class="fa fa-star" id="star1"></span>
+              <span class="fa fa-star" id="star2"></span>
+              <span class="fa fa-star" id="star3"></span>
+              <span class="fa fa-star" id="star4"></span>
+              <span class="fa fa-star" id="star5"></span>
             </div>
           </div>
-          <p class="tPOfTitle">
+          <p class="tPOfTitle" id="description">
             HTML (Hypertext Markup Language) is the standard markup language
             for<br />creating web pages and other information that can be
             displayed in a web<br />browser.It provides a structure for contect
@@ -75,9 +75,10 @@
             class="figcaptionDetails display-flex flex-direction-column"
           >
             <div>
-              <span>HTML</span> by
+              <span id="topic2">HTML</span> by
               <a
                 href="https://en.wikipedia.org/wiki/Sarah_Smith_(news_reporter)"
+                id="name"
                 >Sarah Smith</a
               >
             </div>
@@ -95,27 +96,27 @@
         <p class="ST">HTML Sub Topics</p>
         <div class="Item display-flex align-items-center">
           <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p>HTML syntax and structure</p>
+          <p id="subtopics1">HTML syntax and structure</p>
         </div>
         <div class="Item display-flex align-items-center">
           <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p>HTML elements and attributes</p>
+          <p id="subtopics2">HTML elements and attributes</p>
         </div>
         <div class="Item display-flex align-items-center">
           <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p>HTML forms and input elements</p>
+          <p id="subtopics3">HTML forms and input elements</p>
         </div>
         <div class="Item display-flex align-items-center">
           <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p>HTML tables and lists</p>
+          <p id="subtopics4">HTML tables and lists</p>
         </div>
         <div class="Item display-flex align-items-center">
           <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p>HTML multimedia elements (audio, video, images)</p>
+          <p id="subtopics5">HTML multimedia elements (audio, video, images)</p>
         </div>
         <div class="Item display-flex align-items-center">
           <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p>HTML accessibility and semantic markup</p>
+          <p id="subtopics6">HTML accessibility and semantic markup</p>
         </div>
       </div>
     </main>
