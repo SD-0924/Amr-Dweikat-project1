@@ -82,8 +82,8 @@ function changeDetails() {
       ) {
         document.getElementById("star" + i).classList.add("checked");
       }
-      // document.getElementById("description").innerHTML =
-      //   data[Number(courseID) - 1]["description"];
+      document.getElementById("description").innerHTML =
+        data[Number(courseID) - 1]["description"];
       document.getElementById("imageDetail").src =
         "../images/" + data[Number(courseID) - 1]["image"];
 
