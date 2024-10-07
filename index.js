@@ -28,6 +28,47 @@ function changeMode() {
 }
 let showFavouritesTopics = true;
 function showTopics() {
+  let allFavouriteTopics = JSON.parse(localStorage.getItem("favoriteTopics"));
+  let favoriteItems = document.getElementById("favouriteTopics");
+  let childs = "";
+  fetch("./topics.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      for (let courseID of allFavouriteTopics) {
+        let value = `<div>`;
+        for (let i = 1; i <= 5; i++) {
+          if (i <= Math.round(Number(data[Number(courseID) - 1]["rating"]))) {
+            value += `<span class="fa fa-star checked"></span>`;
+          } else {
+            value += `<span class="fa fa-star"></span>`;
+          }
+        }
+        value += `</div>
+            </figcaption>
+          </figure>`;
+        childs +=
+          `
+        <figure class="favoriteItem display-flex flex-direction-column">
+            <img
+              class="favoutiteImage"
+              src="../images/${data[Number(courseID) - 1]["image"]}"
+              alt="${data[Number(courseID) - 1]["topic"]}"
+            />
+            <figcaption class="favouriteFigcaption">
+              <div class="favoriteTitle">${
+                data[Number(courseID) - 1]["topic"]
+              }</div>` + value;
+      }
+      favoriteItems.innerHTML = childs;
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
   if (showFavouritesTopics) {
     document.getElementById("topicList").style.display = "block";
   } else {
@@ -87,6 +128,9 @@ function changeDetails() {
       document.getElementById("imageDetail").src =
         "../images/" + data[Number(courseID) - 1]["image"];
 
+      document.getElementById("imageDetail").alt =
+        "../images/" + data[Number(courseID) - 1]["topic"];
+
       document.getElementById("name").textContent =
         data[Number(courseID) - 1]["name"];
 
@@ -94,9 +138,10 @@ function changeDetails() {
         document.getElementById("subtopics" + index).innerHTML =
           data[Number(courseID) - 1]["subtopics"][index - 1];
       }
-      if (
-        JSON.parse(localStorage.getItem("favoriteTopics")).includes(courseID)
-      ) {
+      let allFavouriteTopics = JSON.parse(
+        localStorage.getItem("favoriteTopics")
+      );
+      if (allFavouriteTopics.indexOf(courseID) != -1) {
         document.getElementById("favButton").innerHTML =
           "Remove from Favourites";
       } else {
@@ -110,22 +155,19 @@ function changeDetails() {
 function addToFavourite() {
   const courseID = window.location.search.substring(1);
   let allFavouriteTopics = JSON.parse(localStorage.getItem("favoriteTopics"));
-  alert(`array contains ${allFavouriteTopics}`);
   let courseIndex = allFavouriteTopics.indexOf(courseID);
-  alert(`array contains ${allFavouriteTopics}`);
   if (courseIndex == -1) {
     allFavouriteTopics.push(courseID);
     document.getElementById("favButton").innerHTML = "Remove from Favourites";
   } else {
     allFavouriteTopics.splice(courseIndex, 1);
-    alert(`new array contains ${allFavouriteTopics}`);
     document.getElementById("favButton").innerHTML = "Add to Favourites";
   }
-  localStorage.setItem("favoriteTopics", JSON.parse(allFavouriteTopics));
+  localStorage.setItem("favoriteTopics", JSON.stringify(allFavouriteTopics));
 }
 /*  
 the next step is :
 1) make dark mode working always => done by using local storage
 2) make search par working
-3) make details page and favorite page as dynamic instead of static
+3) make details page and favorite page as dynamic instead of static => done by using local storage
 */
