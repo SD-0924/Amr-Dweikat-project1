@@ -30,8 +30,9 @@ function changeMode() {
     !JSON.parse(localStorage.getItem("darkMode"))
   );
 }
+
 // this method to show favourite topics
-function showTopics() {
+function showTopicsOnly() {
   let allFavouriteTopics = JSON.parse(localStorage.getItem("favoriteTopics"));
   let favoriteItems = document.getElementById("favouriteTopics");
   let childs = "";
@@ -73,6 +74,10 @@ function showTopics() {
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
     });
+}
+
+function showTopicAndTrigger() {
+  showTopicsOnly();
   if (!JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
     document.getElementById("topicList").style.display = "block";
   } else {
@@ -83,43 +88,6 @@ function showTopics() {
     !JSON.parse(localStorage.getItem("showFavouritesTopics"))
   );
 }
-
-// this method will be called after page loaded
-document.addEventListener("DOMContentLoaded", function () {
-  let root = document.querySelector(":root");
-  // localStorage.clear();
-  if (localStorage.getItem("--bg_default")) {
-    root.style.setProperty(
-      "--bg_default",
-      localStorage.getItem("--bg_default")
-    );
-    root.style.setProperty("--bg_body", localStorage.getItem("--bg_body"));
-    root.style.setProperty(
-      "--lines-color",
-      localStorage.getItem("--lines-color")
-    );
-    root.style.setProperty("--body-text", localStorage.getItem("--body-text"));
-  }
-  if (!localStorage.getItem("darkMode")) {
-    localStorage.setItem("darkMode", true);
-  }
-  if (!localStorage.getItem("showFavouritesTopics")) {
-    localStorage.setItem("showFavouritesTopics", false);
-  }
-  if (!localStorage.getItem("favoriteTopics")) {
-    localStorage.setItem("favoriteTopics", JSON.stringify([]));
-  }
-  if (JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
-    document.getElementById("topicList").style.display = "block";
-  } else {
-    document.getElementById("topicList").style.display = "none";
-  }
-  if (JSON.parse(localStorage.getItem("darkMode"))) {
-    document.getElementById("modeButton").innerHTML = "Dark Mode";
-  } else {
-    document.getElementById("modeButton").innerHTML = "Light Mode";
-  }
-});
 
 // this method to change page details for each course
 function changeDetails() {
@@ -188,7 +156,46 @@ function addToFavourite() {
     document.getElementById("favButton").innerHTML = "Add to Favourites";
   }
   localStorage.setItem("favoriteTopics", JSON.stringify(allFavouriteTopics));
+  showTopicsOnly();
 }
+
+// this method will be called after page loaded
+document.addEventListener("DOMContentLoaded", function () {
+  let root = document.querySelector(":root");
+  // localStorage.clear();
+  if (localStorage.getItem("--bg_default")) {
+    root.style.setProperty(
+      "--bg_default",
+      localStorage.getItem("--bg_default")
+    );
+    root.style.setProperty("--bg_body", localStorage.getItem("--bg_body"));
+    root.style.setProperty(
+      "--lines-color",
+      localStorage.getItem("--lines-color")
+    );
+    root.style.setProperty("--body-text", localStorage.getItem("--body-text"));
+  }
+  if (!localStorage.getItem("darkMode")) {
+    localStorage.setItem("darkMode", true);
+  }
+  if (!localStorage.getItem("showFavouritesTopics")) {
+    localStorage.setItem("showFavouritesTopics", false);
+  }
+  if (!localStorage.getItem("favoriteTopics")) {
+    localStorage.setItem("favoriteTopics", JSON.stringify([]));
+  }
+  if (JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
+    document.getElementById("topicList").style.display = "block";
+  } else {
+    document.getElementById("topicList").style.display = "none";
+  }
+  if (JSON.parse(localStorage.getItem("darkMode"))) {
+    document.getElementById("modeButton").innerHTML = "Dark Mode";
+  } else {
+    document.getElementById("modeButton").innerHTML = "Light Mode";
+  }
+});
+
 /*  
 the next step is :
 1) make dark mode working always => done by using local storage
