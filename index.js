@@ -109,22 +109,19 @@ function changeDetails() {
 }
 function addToFavourite() {
   const courseID = window.location.search.substring(1);
-  let array = JSON.parse(localStorage.getItem("favoriteTopics"));
-  array.push(courseID);
-  alert(`favoruite courses are ${array}`);
-  // if (JSON.parse(localStorage.getItem("favoriteTopics")).includes(courseID)) {
-  //   const newArray = JSON.parse(localStorage.getItem("favoriteTopics")).filter(
-  //     (item) => item !== courseID
-  //   );
-  //   localStorage.setItem("favoriteTopics", JSON.stringify(newArray));
-  //   document.getElementById("favButton").innerHTML = "Add to Favourites";
-  // } else {
-  //   localStorage.setItem(
-  //     "favoriteTopics",
-  //     JSON.parse(localStorage.getItem("favoriteTopics")).push(courseID)
-  //   );
-  //   document.getElementById("favButton").innerHTML = "Remove from Favourites";
-  // }
+  let allFavouriteTopics = JSON.parse(localStorage.getItem("favoriteTopics"));
+  alert(`array contains ${allFavouriteTopics}`);
+  let courseIndex = allFavouriteTopics.indexOf(courseID);
+  alert(`array contains ${allFavouriteTopics}`);
+  if (courseIndex == -1) {
+    allFavouriteTopics.push(courseID);
+    document.getElementById("favButton").innerHTML = "Remove from Favourites";
+  } else {
+    allFavouriteTopics.splice(courseIndex, 1);
+    alert(`new array contains ${allFavouriteTopics}`);
+    document.getElementById("favButton").innerHTML = "Add to Favourites";
+  }
+  localStorage.setItem("favoriteTopics", JSON.parse(allFavouriteTopics));
 }
 /*  
 the next step is :
