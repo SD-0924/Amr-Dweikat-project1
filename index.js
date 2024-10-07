@@ -1,17 +1,21 @@
+// this method to change page mode (light or dark)
 function changeMode() {
   let root = document.querySelector(":root");
+  let modeButton = document.getElementById("modeButton");
   if (JSON.parse(localStorage.getItem("darkMode"))) {
     // store values to the local storage
     localStorage.setItem("--bg_default", "#1A1A1A");
     localStorage.setItem("--bg_body", "#282828");
     localStorage.setItem("--lines-color", "#000000");
     localStorage.setItem("--body-text", "#EDEDED");
+    modeButton.innerHTML = "Light Mode";
   } else {
     // store values to the local storage
     localStorage.setItem("--bg_default", "#FFFFFF");
     localStorage.setItem("--bg_body", "#F0F9FF");
     localStorage.setItem("--lines-color", "#DDDDDD");
     localStorage.setItem("--body-text", "#333333");
+    modeButton.innerHTML = "Dark Mode";
   }
   root.style.setProperty("--bg_default", localStorage.getItem("--bg_default"));
   root.style.setProperty("--bg_body", localStorage.getItem("--bg_body"));
@@ -26,7 +30,7 @@ function changeMode() {
     !JSON.parse(localStorage.getItem("darkMode"))
   );
 }
-let showFavouritesTopics = true;
+// this method to show favourite topics
 function showTopics() {
   let allFavouriteTopics = JSON.parse(localStorage.getItem("favoriteTopics"));
   let favoriteItems = document.getElementById("favouriteTopics");
@@ -69,15 +73,18 @@ function showTopics() {
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
     });
-  if (showFavouritesTopics) {
+  if (!JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
     document.getElementById("topicList").style.display = "block";
   } else {
     document.getElementById("topicList").style.display = "none";
   }
-  showFavouritesTopics = !showFavouritesTopics;
+  localStorage.setItem(
+    "showFavouritesTopics",
+    !JSON.parse(localStorage.getItem("showFavouritesTopics"))
+  );
 }
 
-// after page loaded get latest colors
+// this method will be called after page loaded
 document.addEventListener("DOMContentLoaded", function () {
   let root = document.querySelector(":root");
   // localStorage.clear();
@@ -92,14 +99,29 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.getItem("--lines-color")
     );
     root.style.setProperty("--body-text", localStorage.getItem("--body-text"));
-  } else {
+  }
+  if (!localStorage.getItem("darkMode")) {
     localStorage.setItem("darkMode", true);
+  }
+  if (!localStorage.getItem("showFavouritesTopics")) {
+    localStorage.setItem("showFavouritesTopics", false);
   }
   if (!localStorage.getItem("favoriteTopics")) {
     localStorage.setItem("favoriteTopics", JSON.stringify([]));
   }
+  if (JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
+    document.getElementById("topicList").style.display = "block";
+  } else {
+    document.getElementById("topicList").style.display = "none";
+  }
+  if (JSON.parse(localStorage.getItem("darkMode"))) {
+    document.getElementById("modeButton").innerHTML = "Dark Mode";
+  } else {
+    document.getElementById("modeButton").innerHTML = "Light Mode";
+  }
 });
 
+// this method to change page details for each course
 function changeDetails() {
   const courseID = window.location.search.substring(1);
   fetch("./topics.json")
@@ -152,6 +174,8 @@ function changeDetails() {
       console.error("There was a problem with the fetch operation:", error);
     });
 }
+
+// this method to add course to favourite list
 function addToFavourite() {
   const courseID = window.location.search.substring(1);
   let allFavouriteTopics = JSON.parse(localStorage.getItem("favoriteTopics"));
