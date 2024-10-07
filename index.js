@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("darkMode", true);
   }
   if (!localStorage.getItem("favoriteTopics")) {
-    localStorage.setItem("favoriteTopics", []);
+    localStorage.setItem("favoriteTopics", JSON.stringify([]));
   }
 });
 
@@ -94,10 +94,37 @@ function changeDetails() {
         document.getElementById("subtopics" + index).innerHTML =
           data[Number(courseID) - 1]["subtopics"][index - 1];
       }
+      if (
+        JSON.parse(localStorage.getItem("favoriteTopics")).includes(courseID)
+      ) {
+        document.getElementById("favButton").innerHTML =
+          "Remove from Favourites";
+      } else {
+        document.getElementById("favButton").innerHTML = "Add to Favourites";
+      }
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
     });
+}
+function addToFavourite() {
+  const courseID = window.location.search.substring(1);
+  let array = JSON.parse(localStorage.getItem("favoriteTopics"));
+  array.push(courseID);
+  alert(`favoruite courses are ${array}`);
+  // if (JSON.parse(localStorage.getItem("favoriteTopics")).includes(courseID)) {
+  //   const newArray = JSON.parse(localStorage.getItem("favoriteTopics")).filter(
+  //     (item) => item !== courseID
+  //   );
+  //   localStorage.setItem("favoriteTopics", JSON.stringify(newArray));
+  //   document.getElementById("favButton").innerHTML = "Add to Favourites";
+  // } else {
+  //   localStorage.setItem(
+  //     "favoriteTopics",
+  //     JSON.parse(localStorage.getItem("favoriteTopics")).push(courseID)
+  //   );
+  //   document.getElementById("favButton").innerHTML = "Remove from Favourites";
+  // }
 }
 /*  
 the next step is :

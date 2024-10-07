@@ -301,7 +301,6 @@ a {
   background-color: var(--brand-secondary);
   border: none;
   color: #ffffff;
-  width: 255px;
   font-size: 20px;
   height: 50px;
   align-items: center;
@@ -346,6 +345,9 @@ a {
 #Footer {
   flex-grow: 1;
   padding-top: 20px;
+}
+#favButton {
+  font-weight: 400;
 }
 @media (min-width: 320px) and (max-width: 1000px) {
   button span {
