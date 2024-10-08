@@ -107,7 +107,7 @@ body {
 select {
   font-size: 20px;
   border: none;
-  /* width: 250px; */
+  width: 250px;
   margin-left: -4px;
   background-color: var(--bg_default);
 }
@@ -230,8 +230,6 @@ a {
 }
 .mainDetails {
   background-color: var(--bg_body);
-  align-items: center;
-  flex-wrap: wrap;
 }
 .information {
   background-color: #333333;
@@ -243,8 +241,8 @@ a {
   width: 100%;
   background-color: #333333;
   justify-content: center;
-  height: 43%;
-  gap: 30px;
+  height: 35%;
+  gap: 50px;
   padding: 10px 0;
 }
 .fPOfTitle,
@@ -320,11 +318,12 @@ a {
 }
 .details {
   height: max-content;
+  width: 575px;
   background-color: var(--bg_default);
   border: 1px solid var(--lines-color);
   border-radius: 5px;
-  margin-top: 70px;
-  font-size: 15px;
+  margin-top: 20px;
+  margin-left: calc(50% - 500px);
 }
 .Item {
   border-top: 1px solid var(--lines-color);
@@ -358,11 +357,11 @@ a {
     align-items: start;
     border: 1px solid var(--lines-color);
     padding-left: 0;
-    /* max-width: max-content; */
-    max-width: 100%;
+    width: 120%;
+    max-width: 120%;
   }
-  select {
-    /* width: 20px; */
+  .header {
+    width: 120%;
   }
   .main {
     padding-left: 15px;
@@ -384,9 +383,22 @@ a {
   }
   .boxFilters {
     border-top: 1px solid var(--lines-color);
-    justify-content: space-between;
+    justify-content: flex-start;
+    width: 100%;
   }
-  body {
-    overflow-x: hidden;
+  select {
+    width: 160px;
+  }
+  .footer {
+    width: 126%;
+  }
+  .topMain {
+    flex-direction: column;
+  }
+  .item {
+    width: 120%;
+  }
+  .item img {
+    width: 100%;
   }
 }

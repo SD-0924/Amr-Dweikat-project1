@@ -621,7 +621,6 @@
       "Add to home screen",
       "Service workers",
       "Fast and responsive",
-      "Secure",
       "Discoverable"
     ],
     "id": 36
@@ -638,7 +637,8 @@
       "Creating accessible web content",
       "Making websites usable with assistive technologies",
       "Designing for accessibility",
-      "Evaluating accessibility"
+      "Evaluating accessibility",
+	  "Secure"
     ],
     "id": 37
   },
@@ -654,7 +654,8 @@
       "Drupal",
       "Joomla",
       "Sitecore",
-      "Contentful"
+      "Contentful",
+	  "Secure"
     ],
     "id": 38
   },
@@ -670,7 +671,8 @@
       "Metrics and KPIs (e.g., bounce rate, conversion rate, time on page)",
       "Tools and platforms (e.g., Google Analytics, Adobe Analytics, Mixpanel)",
       "Data analysis techniques (e.g., segmentation, funnel analysis, A/B testing)",
-      "Data visualization and reporting"
+      "Data visualization and reporting",
+	  "Secure"
     ],
     "id": 39
   }
