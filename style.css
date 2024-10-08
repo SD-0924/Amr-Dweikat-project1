@@ -343,7 +343,7 @@ a {
 }
 #Footer {
   flex-grow: 1;
-  padding-top: 20px;
+  padding: 0;
 }
 #favButton {
   font-weight: 400;
