@@ -124,6 +124,8 @@ function changeDetails() {
       document.getElementById("name").textContent =
         data[Number(courseID) - 1]["name"];
 
+      document.getElementById("name").href = data[Number(courseID) - 1]["url"];
+
       for (let index = 1; index <= 6; index++) {
         document.getElementById("subtopics" + index).innerHTML =
           data[Number(courseID) - 1]["subtopics"][index - 1];

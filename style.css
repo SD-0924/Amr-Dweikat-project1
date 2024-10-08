@@ -107,7 +107,7 @@ body {
 select {
   font-size: 20px;
   border: none;
-  width: 250px;
+  /* width: 250px; */
   margin-left: -4px;
   background-color: var(--bg_default);
 }
@@ -269,7 +269,7 @@ a {
   gap: 20px;
   background-color: #ffffff;
   border: 2px solid #dddddd;
-  width: max-content;
+  width: 356px;
   height: max-content;
 }
 .figcaptionDetails {
@@ -358,10 +358,15 @@ a {
     align-items: start;
     border: 1px solid var(--lines-color);
     padding-left: 0;
-    max-width: max-content;
+    /* max-width: max-content; */
+    max-width: 100%;
+  }
+  select {
+    /* width: 20px; */
   }
   .main {
     padding-left: 15px;
+    max-width: 100%;
   }
   .midHeader {
     margin-bottom: 70px;
