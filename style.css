@@ -348,27 +348,22 @@ a {
 #favButton {
   font-weight: 400;
 }
-@media (min-width: 320px) and (max-width: 1000px) {
+@media (min-width: 320px) and (max-width: 1088px) {
   button span {
     display: none;
   }
   .searchBar {
     flex-direction: column;
-    align-items: start;
+    align-items: normal;
     border: 1px solid var(--lines-color);
     padding-left: 0;
-    width: 120%;
-    max-width: 120%;
-  }
-  .header {
-    width: 120%;
   }
   .main {
-    padding-left: 15px;
-    max-width: 100%;
+    padding: 2%;
+    margin: 0;
   }
   .midHeader {
-    margin-bottom: 70px;
+    margin-bottom: 80px;
   }
   .seacrhIcon {
     padding: 10px;
@@ -377,28 +372,29 @@ a {
   .boxFilterSecond {
     border: none;
     border-radius: none;
+    width: 100%;
   }
   .boxFilterFirst {
     border-right: 1px solid var(--lines-color);
   }
   .boxFilters {
     border-top: 1px solid var(--lines-color);
-    justify-content: flex-start;
-    width: 100%;
+    justify-content: center;
   }
   select {
-    width: 160px;
-  }
-  .footer {
-    width: 126%;
+    width: 100%;
   }
   .topMain {
     flex-direction: column;
   }
-  .item {
-    width: 120%;
-  }
+  .item,
   .item img {
-    width: 100%;
+    max-width: 308px;
+  }
+  .figcaption {
+    margin-left: 10px;
+  }
+  .numberOfItems {
+    font-size: 20px;
   }
 }
