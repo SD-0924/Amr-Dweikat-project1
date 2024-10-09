@@ -348,8 +348,10 @@ a {
 #favButton {
   font-weight: 400;
 }
+/* this media for home page */
 @media (min-width: 320px) and (max-width: 1088px) {
-  button span {
+  #modeButton,
+  #favouriteButton {
     display: none;
   }
   .searchBar {
@@ -384,9 +386,6 @@ a {
   select {
     width: 100%;
   }
-  .topMain {
-    flex-direction: column;
-  }
   .item,
   .item img {
     max-width: 308px;
@@ -397,6 +396,24 @@ a {
   .numberOfItems {
     font-size: 20px;
   }
-  .hello {
+}
+/* this media for details page */
+@media (min-width: 320px) and (max-width: 1000px) {
+  .topMain {
+    flex-direction: column;
+    margin-top: 130px;
+    max-width: 100%;
+    background-color: var(--bg_body);
+    gap: 0;
+  }
+  .information {
+    padding-left: 20px;
+  }
+  .detailsItem {
+    margin-left: 18px;
+  }
+  .details {
+    margin-top: 120px;
+    margin-left: 20px;
   }
 }
