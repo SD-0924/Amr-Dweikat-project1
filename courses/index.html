@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../variables.css" />
     <link rel="stylesheet" href="../style.css" />
-    <script src="../index.js"></script>
     <!-- for star rating -->
     <link
       rel="stylesheet"
@@ -15,7 +14,7 @@
     <link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet" />
     <title>First Project</title>
   </head>
-  <body class="display-flex flex-direction-column" onload="changeDetails();">
+  <body class="display-flex flex-direction-column">
     <header
       class="header display-flex flex-direction-column"
       id="detailsHeader"
@@ -23,14 +22,11 @@
       <div class="topHeader display-flex align-items-center">
         <p class="title">Web Topics</p>
         <div class="buttons display-flex align-items-center">
-          <button class="iconButton display-flex" onclick="changeMode();">
+          <button class="iconButton display-flex" id="firstButton">
             <ion-icon name="moon-outline"></ion-icon
             ><span id="modeButton"> Dark Mode</span>
           </button>
-          <button
-            class="iconButton display-flex"
-            onclick="showTopicAndTrigger();"
-          >
+          <button class="iconButton display-flex" id="secondButton">
             <ion-icon name="heart-outline"></ion-icon>
             <span id="favouriteButton">Favourites</span>
           </button>
@@ -48,85 +44,10 @@
       </div>
     </header>
 
-    <main class="mainDetails display-flex flex-direction-column">
-      <div class="topMain display-flex">
-        <div class="information display-flex flex-direction-column">
-          <div class="display-flex flex-direction-column">
-            <p class="fPOfTitle" id="category">Web Development Languages</p>
-            <p class="sPOfTitle" id="topic">HTML</p>
-            <div>
-              <span class="fa fa-star" id="star1"></span>
-              <span class="fa fa-star" id="star2"></span>
-              <span class="fa fa-star" id="star3"></span>
-              <span class="fa fa-star" id="star4"></span>
-              <span class="fa fa-star" id="star5"></span>
-            </div>
-          </div>
-          <p class="tPOfTitle" id="description">
-            HTML (Hypertext Markup Language) is the standard markup language for
-            creating web pages and other information that can be displayed in a
-            web browser.It provides a structure for contect and defines how it
-            should be displayed on a web page, including text, images, and
-            multimedia. HTML is essential for creating static web pages and is a
-            foundational technology for the World Wide Web.
-          </p>
-        </div>
-        <figure class="detailsItem display-flex flex-direction-column">
-          <img
-            src="../images/javascript.jpg"
-            alt="Javascript image"
-            id="imageDetail"
-          />
-          <figcaption
-            class="figcaptionDetails display-flex flex-direction-column"
-          >
-            <div>
-              <span id="topic2">HTML</span> by
-              <a
-                href="https://en.wikipedia.org/wiki/Sarah_Smith_(news_reporter)"
-                id="name"
-                >Sarah Smith</a
-              >
-            </div>
-            <div class="bottom display-flex flex-direction-column">
-              <p class="firstP">Interested about this topic?</p>
-              <button class="display-flex" onclick="addToFavourite();">
-                <span id="favButton">Add to Favourites</span>
-                <ion-icon name="heart-outline"></ion-icon>
-              </button>
-              <p class="secondP">Unlimited Credits</p>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="details display-flex flex-direction-column">
-        <p class="ST">HTML Sub Topics</p>
-        <div class="Item display-flex align-items-center">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p id="subtopics1">HTML syntax and structure</p>
-        </div>
-        <div class="Item display-flex align-items-center">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p id="subtopics2">HTML elements and attributes</p>
-        </div>
-        <div class="Item display-flex align-items-center">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p id="subtopics3">HTML forms and input elements</p>
-        </div>
-        <div class="Item display-flex align-items-center">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p id="subtopics4">HTML tables and lists</p>
-        </div>
-        <div class="Item display-flex align-items-center">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p id="subtopics5">HTML multimedia elements (audio, video, images)</p>
-        </div>
-        <div class="Item display-flex align-items-center">
-          <ion-icon name="checkmark-circle-outline"></ion-icon>
-          <p id="subtopics6">HTML accessibility and semantic markup</p>
-        </div>
-      </div>
-    </main>
+    <main
+      class="mainDetails display-flex flex-direction-column"
+      id="courseDetails"
+    ></main>
 
     <footer class="footer" id="Footer">
       <div class="footerText">
@@ -149,5 +70,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

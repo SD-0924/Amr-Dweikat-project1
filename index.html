@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="variables.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
     <!-- for star rating -->
     <link
       rel="stylesheet"
@@ -20,14 +19,11 @@
       <div class="topHeader display-flex align-items-center">
         <p class="title">Web Topics</p>
         <div class="buttons display-flex align-items-center">
-          <button class="iconButton display-flex" onclick="changeMode();">
+          <button class="iconButton display-flex" id="firstButton">
             <ion-icon name="moon-outline"></ion-icon
             ><span id="modeButton"> Dark Mode</span>
           </button>
-          <button
-            class="iconButton display-flex"
-            onclick="showTopicAndTrigger();"
-          >
+          <button class="iconButton display-flex" id="secondButton">
             <ion-icon name="heart-outline"></ion-icon>
             <span id="favouriteButton">Favourites</span>
           </button>
@@ -1112,5 +1108,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
