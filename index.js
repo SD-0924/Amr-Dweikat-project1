@@ -15,12 +15,49 @@ secondButton.addEventListener("click", function () {
 });
 
 // this method to create course structure
-const courseTemplate = () => {};
+const courseTemplate = (courseInfo) => {
+  return `
+  <figure class="item display-flex flex-direction-column">
+          <a
+            class="item display-flex flex-direction-column"
+            href="./courses/index.html?${courseInfo.id}"
+          >
+            <img src="./images/${courseInfo.image}" alt="${courseInfo.topic}" />
+            <figcaption class="figcaption display-flex flex-direction-column">
+              <div>
+                ${courseInfo.category}<span class="itemType">${
+    courseInfo.topic
+  }</span>
+              </div>
+              <div class="display-flex flex-direction-column">
+                <div>
+                  ${common.starRatingTemplate(courseInfo.rating)}
+                </div>
+                <p class="author">Author: ${courseInfo.name}</p>
+              </div>
+            </figcaption>
+          </a>
+    </figure>`;
+};
 
 // this method to check which courses I need to render
 const getAllCourses = (text) => {
+  let counter = 0;
+  let courses = "";
   for (let course of data) {
+    if (
+      course.category.toLowerCase().includes(text.toLowerCase()) ||
+      course.name.toLowerCase().includes(text.toLowerCase()) ||
+      course.topic.toLowerCase().includes(text.toLowerCase())
+    ) {
+      counter++;
+      courses += courseTemplate(course);
+    }
   }
+  document.getElementById("result").innerHTML = `"${counter}" Web Topics Found`;
+  if (counter === 0)
+    courses = "Sorry , we don't have the course that you are looking for";
+  return courses;
 };
 
 // this method to render all courses depends on user search
@@ -53,4 +90,5 @@ window.onload = function () {
   common.setPageColor();
   common.checkElements();
   common.showTopicsOnly(allFavouriteTopics);
+  renderCourses("");
 };

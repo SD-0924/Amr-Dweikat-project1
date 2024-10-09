@@ -81,9 +81,11 @@ body {
 }
 .main {
   background-color: var(--bg_body);
-  padding: 40px 80px;
+  padding-top: 40px;
+  padding-left: 40px;
   flex-grow: 1;
   max-width: var(--max-width);
+  width: 100%;
   margin: 0 auto;
 }
 .searchBar {
@@ -91,6 +93,7 @@ body {
   border-radius: 10px;
   padding-left: 10px;
   justify-content: space-between;
+  max-width: 95%;
 }
 .seacrhIcon {
   gap: 20px;
@@ -141,6 +144,7 @@ main > p {
   padding: 0;
   gap: 40px;
   margin-top: 25px;
+  align-items: flex-start;
 }
 .item {
   background-color: var(--bg_default);
@@ -148,6 +152,7 @@ main > p {
   border-radius: 15px;
   margin: 0;
   padding: 0;
+  max-width: 444px;
 }
 img {
   border-top-left-radius: 10px;
@@ -180,7 +185,7 @@ img {
   max-width: 2660px;
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 20px;
+  padding: 40px 0;
 }
 footer .footerText span {
   color: var(--heart-color);
