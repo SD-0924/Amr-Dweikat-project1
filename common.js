@@ -86,7 +86,7 @@ const courseTemplate = (courseInfo) => {
   return `
 <div class="favoriteItems display-flex">
   <figure class="favoriteItem display-flex flex-direction-column">
-    <img class="favoutiteImage" src="./images/${courseInfo.image}" alt="${
+    <img class="favoutiteImage" src="../images/${courseInfo.image}" alt="${
     courseInfo.topic
   }" />
     <figcaption class="favouriteFigcaption">

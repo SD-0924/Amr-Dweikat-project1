@@ -3,6 +3,7 @@ import * as common from "../common.js";
 
 const firstButton = document.getElementById("firstButton");
 const secondButton = document.getElementById("secondButton");
+const allFavouriteTopics = common.getFavouriteCourses();
 
 // localStorage.clear();
 
@@ -10,7 +11,9 @@ const secondButton = document.getElementById("secondButton");
 firstButton.addEventListener("click", common.changeMode);
 
 // this event to handle favourite button
-secondButton.addEventListener("click", common.showTopicAndTrigger);
+secondButton.addEventListener("click", function () {
+  common.showTopicAndTrigger(allFavouriteTopics);
+});
 
 // this method to set some variables in local storage
 const setVariables = () => {
@@ -30,4 +33,5 @@ window.onload = function () {
   setVariables();
   common.setPageColor();
   common.checkElements();
+  common.showTopicsOnly(allFavouriteTopics);
 };

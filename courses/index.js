@@ -5,7 +5,6 @@ const courseID = Number(window.location.search.substring(1));
 const allFavouriteTopics = common.getFavouriteCourses();
 const firstButton = document.getElementById("firstButton");
 const secondButton = document.getElementById("secondButton");
-const thirdButton = document.getElementById("thirdButton");
 
 // this event to handle mode button
 firstButton.addEventListener("click", common.changeMode);
@@ -14,6 +13,20 @@ firstButton.addEventListener("click", common.changeMode);
 secondButton.addEventListener("click", function () {
   common.showTopicAndTrigger(allFavouriteTopics);
 });
+
+// this event to handle add to favourite button
+const addToFavourite = () => {
+  let courseIndex = allFavouriteTopics.indexOf(courseID);
+  if (courseIndex == -1) {
+    allFavouriteTopics.push(courseID);
+    document.getElementById("favButton").innerHTML = "Remove from Favourites";
+  } else {
+    allFavouriteTopics.splice(courseIndex, 1);
+    document.getElementById("favButton").innerHTML = "Add to Favourites";
+  }
+  localStorage.setItem("favoriteTopics", JSON.stringify(allFavouriteTopics));
+  common.showTopicsOnly(allFavouriteTopics);
+};
 
 // this method will check if current course in favourite list or not
 const checkCourseInFavourite = () => {
@@ -68,7 +81,7 @@ const courseDetails = (courseInformation) => {
             </div>
             <div class="bottom display-flex flex-direction-column">
               <p class="firstP">Interested about this topic?</p>
-              <button class="display-flex" id="thirdButton" onclick="addToFavourite();">
+              <button class="display-flex" id="thirdButton">
                 <span id="favButton">${checkCourseInFavourite()}</span>
                 <ion-icon name="heart-outline"></ion-icon>
               </button>
@@ -95,20 +108,8 @@ window.onload = function () {
   renderCourseDetails();
   common.setPageColor();
   common.checkElements();
-};
-
-// this event to handle add to favourite button
-const addToFavourite = () => {
-  alert("yes");
-  //   let courseIndex = allFavouriteTopics.indexOf(courseID);
-  //   if (courseIndex == -1) {
-  //     allFavouriteTopics.push(courseID);
-  //     document.getElementById("favButton").innerHTML = "Remove from Favourites";
-  //   } else {
-  //     allFavouriteTopics.splice(courseIndex, 1);
-  //     document.getElementById("favButton").innerHTML = "Add to Favourites";
-  //   }
-  //   localStorage.setItem("favoriteTopics", JSON.stringify(allFavouriteTopics));
-  //   alert("hel");
-  //   common.showTopicsOnly(allFavouriteTopics);
+  const thirdButton = document.getElementById("thirdButton");
+  // this event to handle add to favourite button
+  thirdButton.addEventListener("click", addToFavourite);
+  common.showTopicsOnly(allFavouriteTopics);
 };
