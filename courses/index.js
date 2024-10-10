@@ -97,7 +97,8 @@ const courseDetails = (courseInformation) => {
 };
 
 // this method will return page template for course
-const changeDetails = () => courseDetails(data[courseID - 1]);
+const changeDetails = () =>
+  courseDetails(common.getCourseInformation(courseID));
 
 // this method to render details page for each course
 const renderCourseDetails = () =>

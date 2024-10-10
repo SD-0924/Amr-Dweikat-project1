@@ -53,6 +53,13 @@ const changeColorInLocalStorage = () => {
   }
 };
 
+// this method to trigger darkMode variable in local storage
+const triggerDarkMode = () =>
+  localStorage.setItem(
+    "darkMode",
+    !JSON.parse(localStorage.getItem("darkMode"))
+  );
+
 // this method to change page mode (light or dark)
 export const changeMode = () => {
   changeColorInLocalStorage();
@@ -63,11 +70,7 @@ export const changeMode = () => {
     localStorage.getItem("--lines-color")
   );
   root.style.setProperty("--body-text", localStorage.getItem("--body-text"));
-
-  localStorage.setItem(
-    "darkMode",
-    !JSON.parse(localStorage.getItem("darkMode"))
-  );
+  triggerDarkMode();
 };
 
 // this method to check showFavouritesTopics variable in local storage
@@ -104,11 +107,15 @@ const courseTemplate = (courseInfo) => {
 </div>`;
 };
 
+// this method will get all information for specific course
+export const getCourseInformation = (courseID) =>
+  data.filter((course) => course.id === courseID)[0];
+
 // this method will return template for all courses
 const prepareAllCourses = (allFavouriteTopics) => {
   let template = "";
   for (let topic of allFavouriteTopics) {
-    template += courseTemplate(data[Number(topic) - 1]);
+    template += courseTemplate(getCourseInformation(topic));
   }
   return template;
 };
@@ -119,6 +126,14 @@ export const showTopicsOnly = (allFavouriteTopics) => {
     prepareAllCourses(allFavouriteTopics);
 };
 
+// this method to trigger showFavouritesTopics variable in local storage
+const triggerShowFavouritesTopics = () =>
+  localStorage.setItem(
+    "showFavouritesTopics",
+    !JSON.parse(localStorage.getItem("showFavouritesTopics"))
+  );
+
+// this method to show favourite topic and trigger showFavouritesTopics variable
 export const showTopicAndTrigger = (allFavouriteTopics) => {
   showTopicsOnly(allFavouriteTopics);
   if (!JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
@@ -126,8 +141,5 @@ export const showTopicAndTrigger = (allFavouriteTopics) => {
   } else {
     document.getElementById("topicList").style.display = "none";
   }
-  localStorage.setItem(
-    "showFavouritesTopics",
-    !JSON.parse(localStorage.getItem("showFavouritesTopics"))
-  );
+  triggerShowFavouritesTopics();
 };
