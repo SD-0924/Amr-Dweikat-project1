@@ -40,7 +40,7 @@ const courseTemplate = (courseInfo) => {
     </figure>`;
 };
 
-// this method to check which courses I need to render
+// this method to check which courses should render
 const getAllCourses = (text) => {
   let courses = "";
   for (let course of data) {

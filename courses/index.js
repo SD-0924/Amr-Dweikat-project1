@@ -14,6 +14,10 @@ secondButton.addEventListener("click", function () {
   common.showTopicAndTrigger(allFavouriteTopics);
 });
 
+// this method to trigger favoriteTopics variable in local storage
+const triggerFavoriteTopics = () =>
+  localStorage.setItem("favoriteTopics", JSON.stringify(allFavouriteTopics));
+
 // this event to handle add to favourite button
 const addToFavourite = () => {
   let courseIndex = allFavouriteTopics.indexOf(courseID);
@@ -24,7 +28,7 @@ const addToFavourite = () => {
     allFavouriteTopics.splice(courseIndex, 1);
     document.getElementById("favButton").innerHTML = "Add to Favourites";
   }
-  localStorage.setItem("favoriteTopics", JSON.stringify(allFavouriteTopics));
+  triggerFavoriteTopics();
   common.showTopicsOnly(allFavouriteTopics);
 };
 
