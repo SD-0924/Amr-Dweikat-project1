@@ -1,5 +1,7 @@
 import data from "./courses/topics.js";
 
+const root = document.querySelector(":root");
+
 // this method to get all favourite courses
 export const getFavouriteCourses = () =>
   JSON.parse(localStorage.getItem("favoriteTopics"));
@@ -17,8 +19,6 @@ export const starRatingTemplate = (rating) => {
   return ratingTemplate;
 };
 
-const root = document.querySelector(":root");
-
 // this method to set page colors depends on values inside local storage
 export const setPageColor = () => {
   if (localStorage.getItem("--bg_default")) {
@@ -35,24 +35,27 @@ export const setPageColor = () => {
   }
 };
 
-// this method to change page mode (light or dark)
-export function changeMode() {
+// this method to change color values inside local storage
+const changeColorInLocalStorage = () => {
   let modeButton = document.getElementById("modeButton");
   if (JSON.parse(localStorage.getItem("darkMode"))) {
-    // store values to the local storage
     localStorage.setItem("--bg_default", "#1A1A1A");
     localStorage.setItem("--bg_body", "#282828");
     localStorage.setItem("--lines-color", "#000000");
     localStorage.setItem("--body-text", "#EDEDED");
     modeButton.innerHTML = "Light Mode";
   } else {
-    // store values to the local storage
     localStorage.setItem("--bg_default", "#FFFFFF");
     localStorage.setItem("--bg_body", "#F0F9FF");
     localStorage.setItem("--lines-color", "#DDDDDD");
     localStorage.setItem("--body-text", "#333333");
     modeButton.innerHTML = "Dark Mode";
   }
+};
+
+// this method to change page mode (light or dark)
+export const changeMode = () => {
+  changeColorInLocalStorage();
   root.style.setProperty("--bg_default", localStorage.getItem("--bg_default"));
   root.style.setProperty("--bg_body", localStorage.getItem("--bg_body"));
   root.style.setProperty(
@@ -65,15 +68,19 @@ export function changeMode() {
     "darkMode",
     !JSON.parse(localStorage.getItem("darkMode"))
   );
-}
+};
 
-// this method to check some elements values
-export const checkElements = () => {
+// this method to check showFavouritesTopics variable in local storage
+export const checkShowFavouritesTopics = () => {
   if (JSON.parse(localStorage.getItem("showFavouritesTopics"))) {
     document.getElementById("topicList").style.display = "block";
   } else {
     document.getElementById("topicList").style.display = "none";
   }
+};
+
+// this method to check darkMode variable in local storage
+export const checkDarkMode = () => {
   if (JSON.parse(localStorage.getItem("darkMode"))) {
     document.getElementById("modeButton").innerHTML = "Dark Mode";
   } else {

@@ -107,7 +107,8 @@ window.onload = function () {
   putShowFavouritesTopicsInLocalStorage();
   putFavoriteTopicsInLocalStorage();
   common.setPageColor();
-  common.checkElements();
+  common.checkDarkMode();
+  common.checkShowFavouritesTopics();
   common.showTopicsOnly(allFavouriteTopics);
   renderCourses("");
   displayCoursesNumber();

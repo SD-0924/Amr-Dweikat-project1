@@ -107,7 +107,8 @@ const renderCourseDetails = () =>
 window.onload = function () {
   renderCourseDetails();
   common.setPageColor();
-  common.checkElements();
+  common.checkDarkMode();
+  common.checkShowFavouritesTopics();
   const thirdButton = document.getElementById("thirdButton");
   // this event to handle add to favourite button
   thirdButton.addEventListener("click", addToFavourite);
