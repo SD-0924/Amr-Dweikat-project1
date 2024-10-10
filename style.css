@@ -413,6 +413,7 @@ a {
   }
   .information {
     padding-left: 20px;
+    max-width: 100%;
   }
   .detailsItem {
     margin-left: 18px;
@@ -420,5 +421,9 @@ a {
   .details {
     margin-top: 120px;
     margin-left: 20px;
+    max-width: 100%;
+  }
+  .mainDetails {
+    width: 110%;
   }
 }
