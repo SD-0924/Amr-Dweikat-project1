@@ -221,7 +221,7 @@ footer .footerText span {
 .favoutiteImage {
   width: 220px;
   height: 120px;
-  background-color: var(--bg_default);
+  background-color: #ffffff;
   border-top: 15px;
 }
 .secondRating {
