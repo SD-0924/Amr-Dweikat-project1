@@ -42,7 +42,6 @@ const courseTemplate = (courseInfo) => {
 
 // this method to check which courses I need to render
 const getAllCourses = (text) => {
-  let counter = 0;
   let courses = "";
   for (let course of data) {
     if (
@@ -50,35 +49,53 @@ const getAllCourses = (text) => {
       course.name.toLowerCase().includes(text.toLowerCase()) ||
       course.topic.toLowerCase().includes(text.toLowerCase())
     ) {
-      counter++;
       courses += courseTemplate(course);
     }
   }
-  document.getElementById("result").innerHTML = `"${counter}" Web Topics Found`;
-  if (counter === 0)
-    courses = "Sorry , we don't have the course that you are looking for";
+  if (courses.length === 0)
+    courses =
+      "<p class='newText'>Sorry , we don't have the course that you are looking for</p>";
   return courses;
 };
 
-// this method to render all courses depends on user search
-const renderCourses = (text) => {
-  document.getElementById("courses").innerHTML = getAllCourses(text);
+// this method to display number of courses after filter them based on text inside search par
+const displayCoursesNumber = () => {
+  const childs = document.getElementById("courses").children;
+  let numberOfCourses = childs.length;
+  if (childs[0].tagName === "P") {
+    numberOfCourses = 0;
+  }
+  document.getElementById(
+    "result"
+  ).innerHTML = `"${numberOfCourses}" Web Topics Found`;
 };
+
+// this method to render all courses depends on user search
+const renderCourses = (text) =>
+  (document.getElementById("courses").innerHTML = getAllCourses(text));
 
 // this event listener to get text in search bar
 search.addEventListener("input", (event) => {
-  const searchText = event.target.value;
-  renderCourses(searchText);
+  renderCourses(event.target.value);
+  displayCoursesNumber();
 });
 
-// this method to set some variables in local storage
-const setVariables = () => {
+// this method to set darkMode variable in local storage
+const putDarkModeInLocalStorage = () => {
   if (!localStorage.getItem("darkMode")) {
     localStorage.setItem("darkMode", true);
   }
+};
+
+// this method to set showFavouritesTopics variable in local storage
+const putShowFavouritesTopicsInLocalStorage = () => {
   if (!localStorage.getItem("showFavouritesTopics")) {
     localStorage.setItem("showFavouritesTopics", false);
   }
+};
+
+// this method to set favoriteTopics variable in local storage
+const putFavoriteTopicsInLocalStorage = () => {
   if (!localStorage.getItem("favoriteTopics")) {
     localStorage.setItem("favoriteTopics", JSON.stringify([]));
   }
@@ -86,9 +103,12 @@ const setVariables = () => {
 
 // when page loaded
 window.onload = function () {
-  setVariables();
+  putDarkModeInLocalStorage();
+  putShowFavouritesTopicsInLocalStorage();
+  putFavoriteTopicsInLocalStorage();
   common.setPageColor();
   common.checkElements();
   common.showTopicsOnly(allFavouriteTopics);
   renderCourses("");
+  displayCoursesNumber();
 };

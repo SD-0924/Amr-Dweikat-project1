@@ -101,8 +101,11 @@ body {
 #search {
   font-size: 20px;
   border: none;
-  color: var(--lines-color);
+  color: var(--body-text);
   background-color: var(--bg_default);
+}
+.newText {
+  color: var(--body-text);
 }
 #search:focus {
   outline-style: none;
@@ -352,6 +355,12 @@ a {
 }
 #favButton {
   font-weight: 400;
+}
+button,
+select,
+input,
+#search::-webkit-search-cancel-button {
+  cursor: pointer;
 }
 /* this media for home page */
 @media (min-width: 320px) and (max-width: 1088px) {
