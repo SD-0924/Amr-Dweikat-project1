@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../variables.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <!-- for star rating -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- for Nunito Sans font -->
+    <link href="https://fonts.cdnfonts.com/css/nunito-sans" rel="stylesheet" />
+    <title>First Project</title>
+  </head>
+  <body class="display-flex flex-direction-column">
+    <header
+      class="header display-flex flex-direction-column"
+      id="detailsHeader"
+    >
+      <div class="topHeader display-flex align-items-center">
+        <p class="title">Web Topics</p>
+        <div class="buttons display-flex align-items-center">
+          <button class="iconButton display-flex" id="firstButton">
+            <ion-icon name="moon-outline"></ion-icon
+            ><span id="modeButton"> Dark Mode</span>
+          </button>
+          <button class="iconButton display-flex" id="secondButton">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span id="favouriteButton">Favourites</span>
+          </button>
+        </div>
+      </div>
+      <div class="midHeader display-flex">
+        <div class="leftTriangle"></div>
+        <div class="rightTriangle"></div>
+      </div>
+      <div class="bottomHeader display-flex flex-direction-column">
+        <span class="firstWelcome">Welcome to our website!</span>
+        <span class="secondWelcome"
+          >We have a new design that's fresh, modern, and easy to use.</span
+        >
+      </div>
+    </header>
+
+    <main
+      class="mainDetails display-flex flex-direction-column"
+      id="courseDetails"
+    ></main>
+
+    <footer class="footer" id="Footer">
+      <div class="footerText">
+        Developed with <span>&#10084;</span> &copy; 2023
+      </div>
+      <div
+        class="favoriteTopics display-flex flex-direction-column"
+        id="topicList"
+      >
+        <p class="favoriteTitle">My Favourite Topics</p>
+        <div class="favoriteItems display-flex" id="favouriteTopics"></div>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" src="./course.js"></script>
+  </body>
+</html>
