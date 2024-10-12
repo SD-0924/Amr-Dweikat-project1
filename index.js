@@ -110,7 +110,6 @@ const putColorsInLocalStorage = () => {
     localStorage.setItem("--bg_body", "#f0f9ff");
     localStorage.setItem("--lines-color", "#dddddd");
     localStorage.setItem("--body-text", "#333333");
-    alert("yes");
   }
 };
 
